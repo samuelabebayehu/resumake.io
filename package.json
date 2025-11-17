@@ -12,6 +12,7 @@
     "lint": "next lint",
     "format": "prettier --write src",
     "format:check": "prettier --check src",
+    "build:resumes": "ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/generate-pdfs.ts",
     "postinstall": "cp node_modules/swiftlatex/dist/swift*.js node_modules/swiftlatex/dist/*.wasm public"
   },
   "dependencies": {
@@ -44,6 +45,7 @@
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "2.7.1",
+    "ts-node": "^10.9.2",
     "typescript": "4.5.3"
   },
   "prettier": {

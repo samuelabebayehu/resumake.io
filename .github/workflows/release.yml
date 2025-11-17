@@ -1,0 +1,55 @@
+name: Release Resumes
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set up LaTeX
+        uses: xu-cheng/setup-texlive-action@v2
+        with:
+          scheme: basic
+
+      - name: Install LaTeX packages
+        run: |
+          tlmgr install collection-fontsrecommended
+          tlmgr install xetex
+
+      - name: Build resumes
+        run: npm run build:resumes
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: resume-${{ github.sha }}
+          release_name: Resume Release ${{ github.sha }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Resume PDFs
+        run: |
+          for file in ./dist/*.pdf; do
+            asset_name=$(basename "$file")
+            gh release upload resume-${{ github.sha }} "$file" --clobber
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,84 @@
+{
+  "selectedTemplate": 1,
+  "headings": {
+    "work": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "awards": "Awards"
+  },
+  "basics": {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "123-456-7890",
+    "website": "johndoe.dev",
+    "location": {
+      "address": "123 Main St",
+      "city": "Anytown",
+      "region": "CA",
+      "postalCode": "12345"
+    }
+  },
+  "sections": [
+    "profile",
+    "education",
+    "work",
+    "skills",
+    "projects",
+    "awards"
+  ],
+  "work": [
+    {
+      "company": "Acme Inc.",
+      "position": "Software Engineer",
+      "startDate": "2022-01-01",
+      "endDate": "Present",
+      "summary": "Developing and maintaining web applications.",
+      "highlights": [
+        "Implemented new features",
+        "Fixed bugs"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Example",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2018-09-01",
+      "endDate": "2022-05-01",
+      "score": "3.8"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "keywords": [
+        "JavaScript",
+        "TypeScript",
+        "Python"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project X",
+      "description": "A cool project.",
+      "highlights": [
+        "Did something cool",
+        "Used cool technology"
+      ],
+      "keywords": [
+        "React",
+        "Node.js"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Best Project",
+      "awarder": "University of Example",
+      "date": "2022-05-01"
+    }
+  ]
+}
