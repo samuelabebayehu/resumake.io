@@ -1,0 +1,172 @@
+{
+  "selectedTemplate": 1,
+  "headings": {
+    "work": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "awards": "Awards"
+  },
+  "basics": {
+    "name": "Samuel Abebayehu Abebe",
+    "email": "samuelabebayehu@gmail.com",
+    "phone": "+251988410417",
+    "website": null,
+    "location": {
+      "address": null,
+      "city": "Addis Ababa",
+      "region": "Ethiopia",
+      "postalCode": null
+    },
+    "summary": "As a skilled professional, I am a dedicated software developer and team leader with a Bachelor's Degree in Computer Science and a strong background. I have a proven track record of leading teams, designing integration architectures, and developing tools and pipelines. My experience includes significant roles in large-scale enterprise data at Ethiopian Airlines and Tech Mahindra, and crucial **health informatics** and **NGO/development context** experience at **ICAP International**."
+  },
+  "sections": ["profile", "education", "work", "skills", "projects"],
+  "work": [
+    {
+      "company": "Ethiopian Airlines",
+      "position": "A/TEAM LEADER CRM",
+      "startDate": "2021-06-01",
+      "endDate": "2021-12-31",
+      "summary": "Lead a team responsible for managing our CRM platform - Implementation of CRM service module, integration of external services and replicating siloed systems into one CRM platform.",
+      "highlights": [
+        "Participate in new implementation requests where Integration needs, feature addition or new service implementations are presented",
+        "Bench marking and proposing new ideas and implementation for better experience",
+        "Training and guiding team members",
+        "Architecture design for third party integration and internal platform implementations",
+        "Performance follow up and reporting"
+      ]
+    },
+    {
+      "company": "Ethiopian Airlines",
+      "position": "SENIOR DEVELOPER",
+      "startDate": "2015-06-01",
+      "endDate": "2021-06-30",
+      "summary": "Developing use cases using Java client libraries, preparing processes on process manager, and deploying artifacts in a Zookeeper managed environment.",
+      "highlights": [
+        "Data ingestion pipeline preparation - Extraction services, transformation mechanisms and transfer architectures",
+        "Perform Migration of existing code base and modules to newer API's releases or platform upgrade on IX",
+        "Setting up real-time targeted data extraction per business requirement - notifying customers, showing real-time departure and arrival data etc...",
+        "Managing, preparing and visualizing revenue, performance etc... data on SAP BI platform",
+        "Preparation of Power BI reports for internal consumption and AD hoc requests"
+      ]
+    },
+    {
+      "company": "Tech Mahindra/Safaricom Ethiopia Project",
+      "position": "SOFTWARE ENGNIEER",
+      "startDate": "2022-07-01",
+      "endDate": "2024-06-30",
+      "summary": "Perform Integrated Systems monitoring and application log analysis.",
+      "highlights": [
+        "Perform Integrated Systems monitoring - monitoring - Splunk, ELK, Oracle Enterprise Manager, Grafana",
+        "Application log analysis, insights and reporting",
+        "Incident management on BMC Helix",
+        "Regular system health check for processes, services and endpoints",
+        "Weekly application performance measuring, reporting and suggestion on improvements",
+        "Improvement - Error rate classification and improvement plan preparation",
+        "RCCA - Recurring incident follow up and resolution"
+      ]
+    },
+    {
+      "company": "ICAP International",
+      "position": "Software Developer",
+      "startDate": null,
+      "endDate": null,
+      "summary": "As a Developer in an **NGO/development context**, I developed tools and customization for **OpenMRS (EMR)** implementation to Ethiopian health facilities and developed reporting pipelines using **MambaETL** module.",
+      "highlights": [
+        "Developed and managed integration pipelines for health reporting platforms including **DHIS2** and **DATIM**.",
+        "Develop and optimize integrations between OpenMRS and external systems",
+        "Develop OpenMRS modules based on requirements",
+        "Support with deployment plans and tooling",
+        "Working with health sector organizations regarding training"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Haramaya University",
+      "area": "Computer Science",
+      "studyType": "Bachelors Degree",
+      "startDate": "2010-01-01",
+      "endDate": "2014-01-31",
+      "score": "3.21/4",
+      "courses": [
+        "Data Structures and Algorithms",
+        "Database Management",
+        "Operating Systems",
+        "Computer Architecture",
+        "Software Engineering"
+      ]
+    },
+    {
+      "institution": "Ethiopian Airlines Aviation Academy",
+      "area": "Aviation Introduction",
+      "studyType": "Certificate",
+      "startDate": "2015-02-01",
+      "endDate": "2015-06-30",
+      "score": "3.8/4",
+      "courses": [
+        "Aviation History and Authorities",
+        "Aviation Safety and Security",
+        "Airport and Airline Operations"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Health Informatics and M&E Systems",
+      "keywords": [
+        "OpenMRS (EMR)",
+        "MambaETL",
+        "DHIS2",
+        "DATIM",
+        "Health Information Systems",
+        "NGO/Development Context"
+      ]
+    },
+    {
+      "name": "Programming and Technologies",
+      "keywords": [
+        "Python",
+        "Java",
+        "JavaScript",
+        "React",
+        "Node Js",
+        "SQL",
+        "Postgres",
+        "Program Optimization",
+        "TensorFlow",
+        "AWS",
+        "Linux",
+        "SAP"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "CRM Implementation",
+      "description": "ETHIOPIAN HAS ACQUIRED A CRM PLATFORM CONSISTING OF TIGHTLY COUPLED SALES, SERVICE AND MARKETING SERVICES. I WAS TASKED WITH DESIGN AND DELIVERY OF DATA AND TECHNICAL IMPLEMENTATION SUPPORT FOR OUR INTERNAL CUSTOMERS AND ORACLE IMPLEMENTATION TEAM.",
+      "highlights": [
+        "Facilitated setup of streaming integration data with identification and structuring data and delivering same to Oracle endpoint.",
+        "Participated on initial adoption of this services assisting our internal teams."
+      ],
+      "keywords": ["CRM", "Oracle", "Python", "Java"]
+    },
+    {
+      "name": "Loyalty and reservation system integration",
+      "description": "Implemented a solution to enable agents to validate and purchase miles without leaving the reservation system, which previously required opening two services from two vendors.",
+      "highlights": [
+        "Created an analyzer to detect specific parameters and trigger a SOAP Web Service request to our loyalty service and update the outcome on source system."
+      ],
+      "keywords": ["Aviation", "Sabre", "Amadeus", "Java", "Nifi"]
+    },
+    {
+      "name": "Mamba Reporting implementation",
+      "description": "Performed implementation of MambaETL and a warehousing solution, with added reporting modules developed based on PEPFAR requirements.",
+      "highlights": [
+        "The tool was packaged with Ethiopian OpenMRS implementation and self-contained, deployed at facilities level throughout Ethiopia."
+      ],
+      "keywords": ["Data Warehousing and ETL", "OpenMRS", "SQL", "Java"]
+    }
+  ],
+  "awards": []
+}
