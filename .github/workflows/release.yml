@@ -21,13 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install TeX Live
-        uses: zauguin/install-texlive@v1
-        with:
-          packages: >
-            scheme-basic
-            collection-fontsrecommended
-            xetex
+      - name: Install LaTeX
+        run: sudo apt-get update && sudo apt-get install -y texlive-full
 
       - name: List resume-data directory
         run: ls -R resume-data
