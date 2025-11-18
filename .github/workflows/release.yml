@@ -29,6 +29,9 @@ jobs:
             collection-fontsrecommended
             xetex
 
+      - name: List resume-data directory
+        run: ls -R resume-data
+
       - name: Build resumes
         run: npm run build:resumes
 
