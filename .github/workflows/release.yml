@@ -8,39 +8,91 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      pdf_count: ${{ steps.count_pdfs.outputs.count }}
+      release_body: ${{ steps.generate_release_body.outputs.body }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.1.7
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Set up Node.js with caching
+        uses: actions/setup-node@v4.0.3
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Install LaTeX
-        run: sudo apt-get update && sudo apt-get install -y texlive-full
-
-      - name: List resume-data directory
-        run: ls -R resume-data
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v1
+        with:
+          packages: >
+            scheme-basic
+            collection-fontsrecommended
+            xetex
+            fullpage
+            amsmath
+            amssymb
+            textcomp
+            inputenc
+            fontenc
+            geometry
+            hyperref
+            xcolor
+            framed
+            tocloft
+            enumitem
+            babel
+            lmodern
+            microtype
+            sectsty
+            helvetica
+            marvosym
+            ifsym
+            fontawesome
+            moderncv
 
       - name: Build resumes
         run: npm run build:resumes
 
-      - name: List dist directory
-        run: ls -R dist
+      - name: Count generated PDFs
+        id: count_pdfs
+        run: echo "count=$(ls -1q dist/*.pdf | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Generate release body
+        id: generate_release_body
+        if: steps.count_pdfs.outputs.count > 0
+        run: |
+          body=$(ls -1 dist/*.pdf | sed 's/dist\///g' | awk '{print "- "$0}')
+          body="**Generated Resumes:**%0A%0A$body"
+          echo "body=$body" >> $GITHUB_OUTPUT
+
+  release:
+    needs: build
+    if: needs.build.outputs.pdf_count > 0
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.7
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: resumes
+          path: dist
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: resume-${{ github.sha }}
           release_name: Resume Release ${{ github.sha }}
+          body: ${{ needs.build.outputs.release_body }}
           draft: false
           prerelease: false
 
