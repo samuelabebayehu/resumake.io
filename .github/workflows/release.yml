@@ -21,15 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set up LaTeX
-        uses: xu-cheng/setup-texlive-action@v2
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v1
         with:
-          scheme: basic
-
-      - name: Install LaTeX packages
-        run: |
-          tlmgr install collection-fontsrecommended
-          tlmgr install xetex
+          packages: >
+            scheme-basic
+            collection-fontsrecommended
+            xetex
 
       - name: Build resumes
         run: npm run build:resumes
